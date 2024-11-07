@@ -28,7 +28,7 @@ body{
 }
 
 .contenedor{
-    width: 120rem;
+    max-width: 120rem;
     margin: 0 auto;
     /*
     Es lo mismo escribir:
@@ -48,7 +48,7 @@ body{
 
 .navegacion-principal{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
 }
 
 .navegacion-principal a{
@@ -57,11 +57,22 @@ body{
     font-size: 2rem;
     font-weight: 700;
     padding: 1rem;
+    text-align: center;
+    display: block;
 }
 
 .navegacion-principal a :hover{
     background-color: var(--primario);
     color: var(--oscuro);
+}
+
+/* RESPONSIVE*/
+
+@media (min-width: 768px) {
+    .navegacion-principal{
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
 @media (min-width: 480px) {
