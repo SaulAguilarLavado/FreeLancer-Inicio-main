@@ -9,7 +9,26 @@
 
 html{
     font-size: 62.5%;
+    box-sizing: border-box;
 }
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/*
+after: crea contenido despues y no se puede seleccionar es un seudoelemento
+ejemplo:
+.titulo::after{
+    content: "Hola";
+}
+
+before: crea contenido antes y no se puede seleccionar es un seudoelemento
+ejemplo:
+.titulo::before{
+    content: "Hola";
+}
+*/
 
 body{
     font-size: 16px; /* 1rem = 10px */
@@ -70,6 +89,8 @@ body{
     background-image: url(../img/hero.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    height: 450px;
+    padding: 20px;
 }
 
 /* RESPONSIVE*/
