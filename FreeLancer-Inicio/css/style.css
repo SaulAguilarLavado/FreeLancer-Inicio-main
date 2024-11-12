@@ -16,6 +16,28 @@ html{
     box-sizing: inherit;
 }
 
+body{
+    font-size: 16px; /* 1rem = 10px */
+    font-family: "Krub", sans-serif;
+    font-style: normal;
+}
+
+h1{
+    font-size: 3.8rem;
+}
+
+h2{
+    font-size: 2.8rem;
+}
+
+h3{
+    font-size: 1.8rem;
+}
+
+h1, h2, h3{
+    text-align: center;
+}
+
 /*
 after: crea contenido despues y no se puede seleccionar es un seudoelemento
 ejemplo:
@@ -30,18 +52,6 @@ ejemplo:
 }
 */
 
-body{
-    font-size: 16px; /* 1rem = 10px */
-    font-family: "Krub", sans-serif;
-    font-style: normal;
-}
-
-.titulo{
-    text-align: center;
-    font-size: 3.8rem;
-    
-}
-
 .titulo span{
     font-size: 2rem;
 }
@@ -49,17 +59,18 @@ body{
 .contenedor{
     max-width: 120rem;
     margin: 0 auto;
-    /*
-    Es lo mismo escribir:
-    margin-top: 0;
-    margin-right: auto;
-    margin-bottom: 0;
-    margin-left: auto;
-    
-    O escribir:
-    margin: 0 auto 0 auto;
-    */
 }
+
+/*
+Es lo mismo escribir:
+margin-top: 0;
+margin-right: auto;
+margin-bottom: 0;
+margin-left: auto;
+
+O escribir:
+margin: 0 auto 0 auto;
+*/
 
 .nav-bg{
     background-color: var(--secundario);
@@ -70,14 +81,21 @@ body{
     flex-direction: column;
 }
 
+@media (min-width: 768px) {
+    .navegacion-principal{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
 .navegacion-principal a{
+    text-align: center;
+    display: block;
     color: var(--blanco);
     text-decoration: none;
     font-size: 2rem;
     font-weight: 700;
     padding: 1rem;
-    text-align: center;
-    display: block;
 }
 
 .navegacion-principal a :hover{
@@ -90,14 +108,26 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     height: 450px;
-    padding: 20px;
+    position: relative;
 }
 
-/* RESPONSIVE*/
+.contenido-hero{
+    position: absolute;
+    /*Cualquiera de los 2 esta bien */
+    background-color: rgba(0, 0, 0, .8);
+    background-color: rgba(0 0 0 / 70%);
 
-@media (min-width: 768px) {
-    .navegacion-principal{
-        flex-direction: row;
-        justify-content: space-between;
-    }
+    width: 100%;
+    height: 100%;
+
+
+    /* posisionar verticalmente y horizontalmente el contenido*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-hero h2, .contenido-hero p{
+    color: var(--blanco);
 }
